@@ -14,7 +14,7 @@ export interface Post {
 })
 export class PostsService {
 
-  private apiUrl = 'http://localhost:3000/posts'; // ajusta según tu backend
+  private apiUrl = 'https://eastycitatfmbackend.onrender.com/posts'; // ajusta según tu backend
 
   constructor(private http: HttpClient) {}
 

@@ -15,7 +15,7 @@ export interface Cita {
 })
 export class CitaService {
   
-  private apiUrl = 'http://localhost:3000/api/appointments';
+  private apiUrl = 'https://eastycitatfmbackend.onrender.com/api/appointments';
 
   constructor(private http: HttpClient) {}
 

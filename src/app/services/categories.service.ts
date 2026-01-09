@@ -12,7 +12,7 @@ export interface Category {  // Definido aquí si quieres tipo, o usa any
   providedIn: 'root'
 })
 export class CategoriesService {
-  private apiUrl = 'http://localhost:3000/categories'; // Ajusta a tu backend
+  private apiUrl = 'https://eastycitatfmbackend.onrender.com/categories'; // Ajusta a tu backend
 
   constructor(private http: HttpClient) {}
 
