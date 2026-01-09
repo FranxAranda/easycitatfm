@@ -1,0 +1,94 @@
+/* 1. CONTENEDOR PRINCIPAL */
+.easycita-container {
+  padding: 2rem;
+  max-width: 1000px; /* Ancho máximo para que no se estire demasiado */
+  margin: 0 auto;    /* Centrado en la pantalla */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* 2. ENCABEZADO (HOLA...) */
+.welcome-header {
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #6b7280;
+}
+
+/* 3. LA REJILLA (GRID) - ¡LA CLAVE! */
+/* Esto es lo que pone las cajas una al lado de la otra */
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem; /* Espacio entre tarjetas */
+  margin-top: 2rem;
+}
+
+/* 4. LAS TARJETAS (CAJAS BLANCAS) */
+.action-card {
+  background: white;
+  border-radius: 16px; /* Bordes redondos */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrado horizontal */
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra suave */
+  border: 1px solid #f3f4f6;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Efecto al pasar el ratón (Hover) */
+.action-card:hover {
+  transform: translateY(-5px); /* Flota hacia arriba */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  border-color: #3b82f6;
+}
+
+/* 5. LOS ICONOS (EMOJIS) */
+.icon-container {
+  background-color: #eff6ff; /* Fondo azul muy claro */
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* Círculo perfecto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.emoji {
+  font-size: 3rem; /* ¡Hacemos el icono grande! */
+}
+
+/* 6. TEXTOS DE LAS TARJETAS */
+.card-content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* 7. BORDES DE COLOR SUPERIOR */
+.primary {
+  border-top: 6px solid #3b82f6; /* Azul */
+}
+
+.secondary {
+  border-top: 6px solid #10b981; /* Verde */
+}

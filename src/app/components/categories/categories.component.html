@@ -1,0 +1,35 @@
+<div class="categories-container">
+
+  <mat-card class="categories-card">
+    <h2 class="title">Categorías</h2>
+    <p class="subtitle">Gestiona tus categorías fácilmente</p>
+
+    <form [formGroup]="categoryForm" class="category-form" (ngSubmit)="addCategory()">
+      <mat-form-field appearance="outline" class="input-apple">
+        <mat-label>Nombre de la categoría</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+
+      <button mat-flat-button color="primary" class="btn-apple" type="submit">
+        Añadir categoría
+      </button>
+    </form>
+  </mat-card>
+
+  <div class="list-wrapper">
+    <mat-card
+      *ngFor="let category of categories"
+      class="category-item-card"
+    >
+      <div class="item-content">
+        <span class="category-name">{{ category.name }}</span>
+      </div>
+
+      <button mat-button color="warn" class="delete-btn" (click)="deleteCategory(category.id)">
+        Eliminar
+      </button>
+    </mat-card>
+  </div>
+
+</div>
+c

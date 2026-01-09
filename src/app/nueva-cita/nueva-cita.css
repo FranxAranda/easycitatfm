@@ -1,0 +1,67 @@
+.wizard-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Encabezado de color según tipo */
+.wizard-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #eee;
+}
+.wizard-header.medico { color: #1e40af; border-color: #dbeafe; }
+.wizard-header.ayuntamiento { color: #86198f; border-color: #fae8ff; }
+
+.icon { font-size: 3rem; display: block; margin-bottom: 0.5rem; }
+
+/* Formularios Grandes */
+.form-group { margin-bottom: 1.5rem; text-align: left; }
+label { display: block; font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: bold; color: #374151; }
+
+.input-grande, textarea {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem; /* Letra grande dentro del input */
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  background-color: #f9fafb;
+}
+
+.input-grande:focus { border-color: #3b82f6; outline: none; }
+
+/* Botones Gigantes */
+button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  margin-top: 1rem;
+  font-weight: bold;
+  transition: transform 0.1s;
+}
+button:active { transform: scale(0.98); }
+
+.btn-primary { background-color: #3b82f6; color: white; }
+.btn-secondary { background-color: #9ca3af; color: white; margin-bottom: 1rem; }
+.btn-success { background-color: #10b981; color: white; }
+
+/* Tarjeta Resumen */
+.resumen-card {
+  background: #f3f4f6;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Pantalla final */
+.success-icon { font-size: 5rem; margin-bottom: 1rem; }
+.success h2 { color: #10b981; }

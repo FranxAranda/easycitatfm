@@ -1,0 +1,61 @@
+<div class="wizard-container">
+
+  <header class="wizard-header" [class.medico]="tipo === 'medico'" [class.ayuntamiento]="tipo === 'ayuntamiento'">
+    <span class="icon">{{ tipo === 'medico' ? '⚕️' : '🏛️' }}</span>
+    <h1>Nueva Cita: {{ tipo === 'medico' ? 'Médico' : 'Ayuntamiento' | titlecase }}</h1>
+  </header>
+
+  <div *ngIf="paso === 1" class="step-content">
+    <h2>📅 Paso 1: ¿Cuándo quieres ir?</h2>
+    
+    <div class="form-group">
+      <label>Elige el día:</label>
+      <input type="date" [(ngModel)]="fecha" class="input-grande">
+    </div>
+
+    <div class="form-group">
+      <label>Elige la hora:</label>
+      <select [(ngModel)]="hora" class="input-grande">
+        <option value="" disabled selected>-- Selecciona hora --</option>
+        <option value="09:00">09:00 AM</option>
+        <option value="10:00">10:00 AM</option>
+        <option value="11:30">11:30 AM</option>
+        <option value="16:00">04:00 PM</option>
+        <option value="17:30">05:30 PM</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Notas (Opcional):</label>
+      <textarea [(ngModel)]="notas" placeholder="Ej: Me duele la cabeza..." rows="3"></textarea>
+    </div>
+
+    <button class="btn-primary" (click)="siguientePaso()">Continuar ➡️</button>
+  </div>
+
+
+  <div *ngIf="paso === 2" class="step-content">
+    <h2>📝 Paso 2: Revisa los datos</h2>
+    
+    <div class="resumen-card">
+      <p><strong>Trámite:</strong> {{ tipo | titlecase }}</p>
+      <p><strong>Día:</strong> {{ fecha }}</p>
+      <p><strong>Hora:</strong> {{ hora }}</p>
+      <p *ngIf="notas"><strong>Notas:</strong> {{ notas }}</p>
+    </div>
+
+    <div class="botones-accion">
+      <button class="btn-secondary" (click)="anteriorPaso()">⬅️ Corregir</button>
+      <button class="btn-success" (click)="confirmarCita()">✅ Confirmar Cita</button>
+    </div>
+  </div>
+
+
+  <div *ngIf="paso === 3" class="step-content success">
+    <div class="success-icon">🎉</div>
+    <h2>¡Cita Confirmada!</h2>
+    <p>Te hemos guardado el hueco.</p>
+    <p class="small">Volviendo al inicio...</p>
+  </div>
+
+</div>

@@ -1,0 +1,94 @@
+/* Contenedor principal del formulario */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+  background-color: #f5f5f5; /* fondo claro */
+}
+
+/* Card del formulario */
+.login-card {
+  max-width: 400px;
+  width: 100%;
+  padding: 24px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Formulario */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Input Material full width */
+.full {
+  width: 100%;
+}
+
+/* Botón principal */
+.btn-solid-primary {
+  width: 100%;
+  padding: 10px 0;
+  background-color: #1976d2; /* azul material */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-solid-primary:disabled {
+  background-color: #90caf9;
+  cursor: not-allowed;
+}
+
+.btn-solid-primary:hover:not(:disabled) {
+  background-color: #1565c0;
+}
+
+/* Link de login debajo */
+.auth-link-text {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Mensaje de error */
+.error, p[style*="color:var(--danger)"] {
+  color: #d32f2f;
+  font-size: 14px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* Ajuste de etiquetas y subtítulos */
+h1 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+p.text-muted {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+/* Esto elimina el fondo gris/azul del autocompletado */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important; /* Cambia 'white' por el color de fondo de tu input */
+    -webkit-text-fill-color: #000 !important; /* Color del texto */
+    transition: background-color 5000s ease-in-out 0s;
+}

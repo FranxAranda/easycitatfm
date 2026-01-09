@@ -1,0 +1,52 @@
+<mat-sidenav-container class="app-sidenav-container">
+  
+  <mat-sidenav mode="side" opened class="sidebar-nav">
+    
+    <div class="sidebar-header">
+      <span style="color: #1976d2; font-weight: bold;">Easy</span>Cita
+    </div>
+
+    <mat-nav-list class="menu-list">
+      
+      <a mat-list-item routerLink="/app/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <mat-icon matListItemIcon>home</mat-icon>
+        <span matListItemTitle>Inicio</span>
+      </a>
+      
+      <a mat-list-item routerLink="/app/citas" routerLinkActive="active">
+        <mat-icon matListItemIcon>calendar_today</mat-icon>
+        <span matListItemTitle>Mis Citas</span>
+      </a>
+      
+      <a mat-list-item routerLink="/app/profile" routerLinkActive="active">
+        <mat-icon matListItemIcon>person</mat-icon>
+        <span matListItemTitle>Mis Datos</span>
+      </a>
+
+      <a mat-list-item routerLink="/app/ayuda" routerLinkActive="active">
+        <mat-icon matListItemIcon>help</mat-icon>
+        <span matListItemTitle>Ayuda</span>
+      </a>
+
+    </mat-nav-list>
+
+    <div class="menu-footer">
+      <a mat-list-item (click)="logout()" class="logout" style="cursor: pointer;">
+        <mat-icon matListItemIcon>logout</mat-icon> 
+        <span matListItemTitle>Cerrar sesión</span>
+      </a>
+    </div>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content-area">
+    <mat-toolbar class="app-toolbar">
+       <span>Panel de Usuario</span> 
+    </mat-toolbar>
+
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

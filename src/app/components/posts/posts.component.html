@@ -1,0 +1,58 @@
+<div class="posts-container">
+
+  <mat-card class="posts-card">
+    <h2 class="title">Publicaciones</h2>
+    <p class="subtitle">Crea y gestiona tus posts</p>
+
+    <form [formGroup]="postForm" class="post-form" (ngSubmit)="createPost()">
+
+      <!-- INPUT TÍTULO -->
+      <mat-form-field appearance="outline" class="input-apple full">
+        <mat-label>Título</mat-label>
+        <input matInput formControlName="title" />
+      </mat-form-field>
+
+      <!-- INPUT CATEGORÍA -->
+      <mat-form-field appearance="outline" class="input-apple half">
+        <mat-label>Categoría</mat-label>
+        <input matInput formControlName="category" />
+      </mat-form-field>
+
+      <!-- INPUT IMAGEN -->
+      <mat-form-field appearance="outline" class="input-apple half">
+        <mat-label>URL de imagen (opcional)</mat-label>
+        <input matInput formControlName="image" />
+      </mat-form-field>
+
+      <!-- INPUT CONTENIDO -->
+      <mat-form-field appearance="outline" class="input-apple full textarea-field">
+        <mat-label>Contenido</mat-label>
+        <textarea matInput rows="5" formControlName="content"></textarea>
+      </mat-form-field>
+
+      <button mat-flat-button class="btn-apple" type="submit">Crear post</button>
+    </form>
+  </mat-card>
+
+  <!-- LISTA DE POSTS -->
+  <div class="list-wrapper">
+    <mat-card class="post-item-card" *ngFor="let post of posts">
+      
+      <div class="post-header">
+        <div>
+          <h3 class="post-title">{{ post.title }}</h3>
+          <p class="post-category">{{ post.category }}</p>
+        </div>
+        <button mat-button color="warn" class="delete-btn" (click)="deletePost(post.id)">
+          Eliminar
+        </button>
+      </div>
+
+      <p class="post-content">{{ post.content }}</p>
+
+      <img *ngIf="post.image" class="post-image" [src]="post.image" alt="Imagen del post" />
+
+    </mat-card>
+  </div>
+
+</div>

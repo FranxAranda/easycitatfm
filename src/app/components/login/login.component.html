@@ -1,0 +1,40 @@
+<div class="login-wrapper"> <div class="login-card">
+    <h1 style="text-align: center;">Iniciar sesión</h1>
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="auth-form">
+      
+      <mat-form-field appearance="outline" floatLabel="always" class="full">
+        <mat-label>Email</mat-label>
+        <input matInput 
+               type="email" 
+               formControlName="email"
+               name="email"
+               autocomplete="username"
+               class="auth-input-material" />
+        <mat-error *ngIf="loginForm.get('email')?.hasError('required')">El email es obligatorio</mat-error>
+        <mat-error *ngIf="loginForm.get('email')?.hasError('email')">Formato inválido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" floatLabel="always" class="full">
+        <mat-label>Contraseña</mat-label>
+        <input matInput 
+               type="password" 
+               formControlName="password"
+               name="password"
+               autocomplete="current-password"
+               class="auth-input-material" />
+        <mat-error *ngIf="loginForm.get('password')?.hasError('required')">La contraseña es obligatoria</mat-error>
+      </mat-form-field>
+
+      <div class="error-message" *ngIf="error" style="color: red; text-align: center;">{{ error }}</div>
+
+      <button class="btn-solid-primary" type="submit">
+        Iniciar sesión
+      </button>
+    </form>
+    
+    <p class="auth-link-text" style="text-align: center; margin-top: 10px;">
+      ¿No tienes cuenta? <a routerLink="/register">Regístrate</a>
+    </p>
+  </div>
+</div>

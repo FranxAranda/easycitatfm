@@ -1,0 +1,96 @@
+.categories-container {
+  padding: 40px 16px;
+  max-width: 850px;
+  margin: auto;
+}
+
+/* Card principal */
+.categories-card {
+  padding: 32px;
+  border-radius: 24px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  background: #ffffff;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 500;
+  color: #1c1c1e;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #6e6e73;
+  margin-bottom: 24px;
+}
+
+/* Formulario */
+.category-form {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.input-apple {
+  flex: 1;
+  min-width: 260px;
+
+  .mat-mdc-text-field-wrapper {
+    border-radius: 14px !important;
+    border: 1px solid #e5e5e5 !important;
+    background: #fafafa !important;
+  }
+
+  .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+  }
+}
+
+/* Botón Apple */
+.btn-apple {
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #f5f5f7, #e6e6e8);
+  color: #1c1c1e !important;
+  text-transform: none;
+  font-weight: 500;
+  transition: 0.2s;
+
+  &:hover {
+    background: linear-gradient(180deg, #ececee, #dcdcdf);
+  }
+}
+
+/* Lista de categorías */
+.list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.category-item-card {
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.03);
+  background: #ffffff;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-name {
+  font-size: 17px;
+  color: #1c1c1e;
+}
+
+/* Botón eliminar minimalista */
+.delete-btn {
+  text-transform: none;
+  font-size: 14px;
+  color: #ff3b30 !important; /* Red Apple */
+}

@@ -1,0 +1,130 @@
+.posts-container {
+  padding: 40px 16px;
+  max-width: 950px;
+  margin: auto;
+}
+
+/* Card principal */
+.posts-card {
+  padding: 32px;
+  border-radius: 24px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  background: #ffffff;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 500;
+  color: #1c1c1e;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #6e6e73;
+  margin-bottom: 24px;
+}
+
+/* FORMULARIO */
+.post-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.full {
+  width: 100%;
+}
+
+.half {
+  width: calc(50% - 8px);
+}
+
+/* Inputs estilo Apple */
+.input-apple {
+  .mat-mdc-text-field-wrapper {
+    border-radius: 14px !important;
+    border: 1px solid #e5e5e5 !important;
+    background: #fafafa !important;
+  }
+
+  .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+  }
+}
+
+/* Textarea */
+.textarea-field textarea {
+  min-height: 120px;
+}
+
+/* Botón Apple */
+.btn-apple {
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #f5f5f7, #e6e6e8);
+  color: #1c1c1e !important;
+  text-transform: none;
+  font-weight: 500;
+  margin-top: 8px;
+
+  &:hover {
+    background: linear-gradient(180deg, #ececee, #dcdcdf);
+  }
+}
+
+/* LISTA DE POSTS */
+.list-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.post-item-card {
+  padding: 24px;
+  border-radius: 18px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.03);
+  background: #ffffff;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-title {
+  font-size: 20px;
+  color: #1c1c1e;
+  margin-bottom: 2px;
+}
+
+.post-category {
+  font-size: 14px;
+  color: #6e6e73;
+}
+
+.post-content {
+  margin: 16px 0;
+  color: #1c1c1e;
+  line-height: 1.5;
+}
+
+/* Imagen del post */
+.post-image {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-top: 10px;
+}
+
+/* Botón eliminar */
+.delete-btn {
+  text-transform: none;
+  font-size: 14px;
+  color: #ff3b30 !important;
+}

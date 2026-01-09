@@ -1,0 +1,62 @@
+<div class="citas-container">
+
+  <div class="header-row">
+    <h1 class="page-title">Mis Citas Pendientes</h1>
+    
+    <button class="btn-refresh" (click)="cargarCitas()" title="Actualizar lista">
+      🔄
+    </button>
+  </div>
+
+  <div *ngIf="loading" class="loading-container">
+    <div class="spinner"></div>
+    <p>Cargando tu agenda...</p>
+  </div>
+
+  <div *ngIf="!loading">
+
+    <div *ngIf="citas.length === 0" class="empty-state">
+      <span class="empty-icon">😌</span>
+      <h2>No tienes citas próximas</h2>
+      <p>Disfruta de tu día.</p>
+    </div>
+
+    <div *ngIf="citas.length > 0" class="citas-list">
+      
+      <div *ngFor="let cita of citas" 
+           class="cita-card fade-in" 
+           (click)="verDetalle(cita)"
+           title="Haz clic para ver detalles">
+        
+        <div class="cita-icon" 
+             [class.medico]="(cita.service || '').includes('Médico')" 
+             [class.ayuntamiento]="!(cita.service || '').includes('Médico')">
+          {{ (cita.service || '').includes('Médico') ? '⚕️' : '🏛️' }}
+        </div>
+
+        <div class="cita-info">
+          <span class="cita-fecha">
+            {{ cita.date | date:'dd/MM/yyyy' }} a las {{ cita.date | date:'HH:mm' }}
+          </span>
+          
+          <h3>{{ cita.service }}</h3>
+          
+          <p class="cita-lugar">
+            📍 {{ (cita.service || '').includes('Médico') ? 'Centro de Salud' : 'Ayuntamiento' }}
+          </p>
+        </div>
+
+        <div class="cita-estado">
+          <span class="badge" 
+                [class.confirmada]="cita.status === 'scheduled'" 
+                [class.pendiente]="cita.status === 'pendiente'">
+            {{ (cita.status === 'scheduled' ? 'Confirmada' : 'Pendiente') | titlecase }}
+          </span>
+        </div>
+
+        <button class="btn-cancelar" 
+                (click)="cancelarCita(cita._id, $event)" 
+                title="Cancelar Cita">✖</button>
+
+      </div> </div> </div> </div> ```
+

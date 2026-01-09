@@ -1,0 +1,35 @@
+<h2>Crear / Editar Post</h2>
+<mat-card class="form-card">
+
+<form [formGroup]="postForm" (ngSubmit)="savePost()">
+
+  <mat-form-field appearance="outline" class="full">
+    <mat-label>Título</mat-label>
+    <input matInput formControlName="title" />
+    <mat-error *ngIf="postForm.get('title')?.hasError('required')">
+      El título es obligatorio
+    </mat-error>
+    <mat-error *ngIf="postForm.get('title')?.hasError('minlength')">
+      Mínimo 3 caracteres
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full">
+    <mat-label>Contenido</mat-label>
+    <textarea matInput formControlName="content"></textarea>
+    <mat-error *ngIf="postForm.get('content')?.hasError('required')">
+      El contenido es obligatorio
+    </mat-error>
+    <mat-error *ngIf="postForm.get('content')?.hasError('minlength')">
+      Mínimo 10 caracteres
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">
+    Guardar
+  </button>
+
+</form>
+</mat-card>
+
+<p *ngIf="error" style="color:red;">{{ error }}</p>

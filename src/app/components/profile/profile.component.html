@@ -1,0 +1,55 @@
+<div class="profile-container fade-in">
+  
+  <div class="profile-header">
+    <h1>Mi Perfil</h1>
+    <p>Gestiona tu información personal y preferencias</p>
+  </div>
+
+  <div class="profile-card">
+    
+    <div class="profile-sidebar">
+      <div class="avatar-circle">
+        {{ nombre ? nombre.charAt(0).toUpperCase() : 'U' }}
+      </div>
+      <h3 class="user-name">{{ nombre || 'Usuario' }}</h3>
+      <span class="user-role">Ciudadano</span>
+      <p class="user-since">Miembro desde: {{ fechaRegistro }}</p>
+    </div>
+
+    <div class="profile-form">
+      
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Nombre Completo</label>
+          <input type="text" [(ngModel)]="nombre" placeholder="Tu nombre">
+        </div>
+
+        <div class="form-group">
+          <label>Correo Electrónico <span class="badge-lock">🔒</span></label>
+          <input type="email" [value]="email" disabled class="input-disabled">
+        </div>
+
+        <div class="form-group">
+          <label>Teléfono</label>
+          <input type="tel" [(ngModel)]="telefono" placeholder="+34 ...">
+        </div>
+
+        <div class="form-group">
+          <label>Dirección</label>
+          <input type="text" [(ngModel)]="direccion" placeholder="Calle...">
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn-save" (click)="guardarDatos()">
+          💾 Guardar
+        </button>
+        
+        <button class="btn-logout" (click)="cerrarSesion()">
+          Cerrar Sesión
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>

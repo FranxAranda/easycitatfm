@@ -1,0 +1,22 @@
+/* --- FIX PARA AUTOCOMPLETADO Y CLICS --- */
+
+/* Fuerza fondo blanco y texto negro al autocompletar */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: #000 !important;
+    transition: background-color 5000s ease-in-out 0s;
+    z-index: 1; /* Asegura que el input esté por encima para recibir clics */
+}
+
+/* Asegura transparencia base */
+.auth-input-material {
+    background-color: transparent !important;
+}
+
+/* Ajuste opcional si usas appearance="outline" */
+.mat-mdc-form-field {
+    width: 100%;
+}

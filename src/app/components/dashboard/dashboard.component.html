@@ -1,0 +1,69 @@
+<div class="dashboard-container fade-in">
+
+  <header class="welcome-header">
+    <div class="header-info">
+      <h1>Hola, <span class="highlight">{{ userName }}</span></h1>
+      <p class="subtitle">Bienvenido a tu portal de gestión ciudadana.</p>
+    </div>
+    
+    <div class="header-avatar-big" (click)="irAPerfil()" title="Ir a mi perfil">
+      {{ userName.charAt(0).toUpperCase() }}
+    </div>
+  </header>
+
+  <section class="reminder-section" *ngIf="proximaCita">
+    <div class="reminder-banner" (click)="verMisCitas()">
+      <div class="reminder-content">
+        <span class="badge-pulse">🔔 Próxima Cita</span>
+        <h2 class="reminder-title">{{ proximaCita.service }}</h2>
+        <div class="reminder-details">
+          <span>📅 {{ proximaCita.date | date:'EEEE d MMMM' }}</span>
+          <span class="separator">•</span>
+          <span>⏰ {{ proximaCita.date | date:'HH:mm' }}h</span>
+        </div>
+      </div>
+      <div class="reminder-icon-box">
+        {{ (proximaCita.service || '').includes('Médico') ? '⚕️' : '🏛️' }}
+      </div>
+    </div>
+  </section>
+
+  <div *ngIf="!proximaCita && !loading" style="margin-bottom: 40px;"></div>
+
+  <h3 class="section-title">¿Qué gestión necesitas?</h3>
+
+  <div class="action-grid">
+    
+    <div class="action-card card-medico" (click)="irACita('medico')">
+      <div class="icon-big">⚕️</div>
+      <div class="card-text">
+        <h3>Salud</h3>
+        <p>Pedir cita médica</p>
+      </div>
+    </div>
+
+    <div class="action-card card-ayuntamiento" (click)="irACita('ayuntamiento')">
+      <div class="icon-big">🏛️</div>
+      <div class="card-text">
+        <h3>Ayuntamiento</h3>
+        <p>Trámites y gestión</p>
+      </div>
+    </div>
+
+    <div class="action-card card-citas" (click)="verMisCitas()">
+      <div class="icon-big">📅</div> <div class="card-text">
+        <h3>Mis Citas</h3>
+        <p>Consultar agenda</p>
+      </div>
+    </div>
+
+    <div class="action-card card-perfil" (click)="irAPerfil()">
+      <div class="icon-big">👤</div>
+      <div class="card-text">
+        <h3>Mi Perfil</h3>
+        <p>Datos personales</p>
+      </div>
+    </div>
+
+  </div>
+</div>

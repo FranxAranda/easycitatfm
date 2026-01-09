@@ -1,0 +1,130 @@
+/* dashboard-layout.component.css */
+
+/* 1. CONTENEDOR PRINCIPAL: Ocupa toda la pantalla */
+.app-sidenav-container {
+  height: 100vh;
+  width: 100%;
+  background-color: #f5f7fa; /* Fondo gris claro para la app */
+}
+
+/* 2. BARRA LATERAL (Sidebar) */
+.sidebar-nav {
+  width: 260px; /* Ancho fijo: Evita que se vea aplastado */
+  background-color: #ffffff; /* Fondo blanco */
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column; /* Fundamental para empujar el footer abajo */
+}
+
+/* 3. CABECERA (Logo EasyCita) */
+.sidebar-header {
+  padding: 24px 20px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #333;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+}
+
+/* 4. LISTA DE MENÚ (Empuja el contenido hacia arriba) */
+.menu-list {
+  flex-grow: 1; 
+  padding: 16px 10px;
+}
+
+/* 5. ESTILOS DE LOS ENLACES (Botones) */
+/* Selector específico para que Angular Material no sobrescriba estilos */
+mat-nav-list a[mat-list-item] {
+  height: 48px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  color: #64748b; /* Gris texto */
+  font-weight: 500;
+  transition: all 0.2s ease;
+  
+  /* Flexbox para alinear Icono y Texto perfectamente */
+  display: flex;
+  align-items: center; 
+}
+
+/* Estilo del Icono dentro del botón */
+mat-nav-list mat-icon {
+  margin-right: 12px; /* Espacio entre icono y texto */
+  color: #94a3b8;
+}
+
+/* HOVER: Cuando pasas el ratón */
+mat-nav-list a[mat-list-item]:hover {
+  background-color: #f1f5f9;
+  color: #1976d2; /* Azul */
+}
+mat-nav-list a[mat-list-item]:hover mat-icon {
+  color: #1976d2;
+}
+
+/* ACTIVE: Cuando estás en esa pestaña */
+mat-nav-list a[mat-list-item].active {
+  background-color: #e0f2fe; /* Fondo azul muy clarito */
+  color: #0284c7; /* Azul fuerte */
+}
+mat-nav-list a[mat-list-item].active mat-icon {
+  color: #0284c7;
+}
+
+/* 6. FOOTER (Botón Cerrar Sesión) */
+.menu-footer {
+  padding: 16px;
+  border-top: 1px solid #f0f0f0;
+  background-color: #fff;
+}
+
+/* Estilo específico para el botón de salir */
+.logout {
+  color: #ef4444 !important; /* Rojo */
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background-color: #fef2f2 !important; /* Fondo rojo suave */
+}
+
+.logout mat-icon {
+  color: #ef4444 !important;
+}
+
+/* 7. ÁREA DE CONTENIDO (Derecha) */
+.content-area {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+/* Barra superior derecha (Toolbar) */
+.app-toolbar {
+  background: white;
+  height: 64px;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Contenedor donde se cargan las páginas */
+.container {
+  padding: 32px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* RESPONSIVE: En móviles el menú se hace más estrecho si es necesario */
+@media (max-width: 768px) {
+  .sidebar-nav {
+    width: 200px;
+  }
+}
